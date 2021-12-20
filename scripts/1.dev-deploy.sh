@@ -21,10 +21,10 @@ echo ---------------------------------------------------------
 echo
 
 # comment out the line below to deploy the other example contract
-near dev-deploy ./build/release/simple.wasm
+# near dev-deploy ./build/release/simple.wasm
 
 # uncomment the line below to deploy the other example contract
-# near dev-deploy ./build/release/singleton.wasm
+near dev-deploy ./build/release/singleton.wasm
 
 echo
 echo
@@ -38,9 +38,10 @@ echo "(b) set an environment variable using this account name"
 echo "    see example below (this may not work on Windows)"
 echo
 echo ---------------------------------------------------------
-echo 'export CONTRACT=<dev-123-456>'
+echo 'export CONTRACT=dev-1640008486408-5157432053504'
+echo 'export OWNER=johnonym.testnet'
 # uncomment this line for a useful hint when using the singleton style
-# echo "near call \$CONTRACT init --accountId \$CONTRACT"
+echo "near call \$CONTRACT init --accountId \$CONTRACT"
 echo ---------------------------------------------------------
 echo
 

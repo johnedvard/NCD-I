@@ -1,19 +1,23 @@
-import * as contract from "../assembly";
+import * as contract from '../assembly';
 
-describe("Contract", () => {
+describe('Contract', () => {
   // VIEW method tests
 
-  it("says hello", () => {
-    expect(contract.helloWorld()).toStrictEqual("hello world")
-  })
+  it('says hello', () => {
+    expect(contract.helloWorld()).toStrictEqual('hello 貞だsで');
+  });
 
-  it("reads data", () => {
-    expect(contract.read("some key")).toStrictEqual("🚫 Key [ some key ] not found in storage. ( storage [ 0 bytes ] )")
-  })
+  it('reads data', () => {
+    expect(contract.read('some key')).toStrictEqual(
+      '🚫 Key [ some key ] not found in storage. ( storage [ 0 bytes ] )'
+    );
+  });
 
   // CHANGE method tests
 
-  it("saves data to contract storage", () => {
-    expect(contract.write("some-key", "some value")).toStrictEqual("✅ Data saved. ( storage [ 18 bytes ] )")
-  })
-})
+  it('saves data to contract storage', () => {
+    expect(contract.write('some-key', 'some value')).toStrictEqual(
+      '✅ Data saved. ( storage [ 18 bytes ] )'
+    );
+  });
+});

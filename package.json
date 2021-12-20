@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "description": "Start with a basic project",
   "scripts": {
+    "start": "yarn",
     "dev": "watch -d -n 1 'clear && yarn test'",
     "test": "yarn asp -f unit.spec",
     "clean": "rm -rf ./build && rm -rf ./neardev",
     "build": "asb --target debug",
     "build:release": "asb",
+    "deploy": "near dev-deploy ./build/release/singleton.wasm",
     "asp": "asp --verbose --nologo"
   },
   "keywords": [],
@@ -15,5 +17,6 @@
   "license": "ISC",
   "devDependencies": {
     "near-sdk-as": "^3.1.0"
-  }
+  },
+  "dependencies": {}
 }

@@ -1,25 +1,28 @@
-import { Contract } from "../assembly";
+import { Contract } from '../assembly';
 
-let contract: Contract
+let contract: Contract;
 
 beforeEach(() => {
-  contract = new Contract()
-})
+  contract = new Contract();
+});
 
-describe("Contract", () => {
-  // VIEW method tests
+describe('Contract', () => {
+  it('adds word', () => {
+    expect(contract.addWord('コイ')).toStrictEqual(1);
+  });
 
-  it("says hello", () => {
-    expect(contract.helloWorld()).toStrictEqual("hello world")
-  })
+  it('cannot save same word', () => {
+    expect(contract.addWord('コイ')).toStrictEqual(1);
+    expect(contract.addWord('コイ')).toStrictEqual(0);
+  });
 
-  it("reads data", () => {
-    expect(contract.read("some key")).toStrictEqual("🚫 Key [ some key ] not found in storage. ( storage [ 0 bytes ] )")
-  })
+  it('cannot save illegal word', () => {
+    expect(contract.addWord('コイ')).toStrictEqual(1);
+    expect(contract.addWord('コイん')).toStrictEqual(0);
+  });
 
-  // CHANGE method tests
-
-  it("saves data to contract storage", () => {
-    expect(contract.write("some-key", "some value")).toStrictEqual("✅ Data saved. ( storage [ 18 bytes ] )")
-  })
-})
+  it('must add word that start with correct character', () => {
+    expect(contract.addWord('コイ')).toStrictEqual(1);
+    expect(contract.addWord('イクラ')).toStrictEqual(1);
+  });
+});
