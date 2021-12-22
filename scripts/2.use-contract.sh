@@ -31,7 +31,7 @@ echo "Get the current game's regisdtered words"
 near view $CONTRACT getWords
 
 echo "Get a game's state"
-near view $CONTRACT getAGame '{"word": "スル"}'
+near view $CONTRACT getAGame '{"word": "キング"}'
 
 echo
 echo
