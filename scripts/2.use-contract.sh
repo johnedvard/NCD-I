@@ -37,7 +37,7 @@ echo
 echo
 echo ---------------------------------------------------------
 echo "Step 2: Call 'change' functions on the contract"
-echo "Remember to change the word from キング to something else (because a game with key キング already exists)"
+echo "Remember to change the word from キング to something else (in case a game with key キング already exists on the contract)"
 echo ---------------------------------------------------------
 echo
 

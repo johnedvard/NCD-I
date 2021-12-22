@@ -15,7 +15,15 @@ This project is based on the Japanese game, [Shiritori Game](https://en.wikipedi
    - game1: ['カイ', 'イクラ'] -> try to add 'イクラ' again, game resets.
    - game2: try to add 'カイ' as the first word. Not allowed because game1 uses that word as a key, and its final.
 
-When a player looses the game, the game resets.
+When a player looses the game, the game restarts.
+
+## How to run
+
+1. `npm install`
+2. deploy contract by running shell script `./scripts/1.dev-deploy.sh`
+3. change CONTRACT (and ACCOUNT_ID) in "scripts/2.dev-deploy.sh" with the newly generated dev-account
+4. run `./scripts/2.dev-deploy.sh` to see some example usage of the contract functions
+   - Remember to change the ACCOUNT_ID each time you add a new word to the contract (because of the game's rules)
 
 ## Additional comments
 
