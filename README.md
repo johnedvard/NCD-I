@@ -25,6 +25,10 @@ When a player looses the game, the game restarts.
 4. run `./scripts/2.dev-deploy.sh` to see some example usage of the contract functions
    - Remember to change the ACCOUNT_ID each time you add a new word to the contract (because of the game's rules)
 
+## How to test
+
+run `npm run test` to run the tests for the game found in "src/singleton/**tests**/index.unit.spec.ts"
+
 ## Additional comments
 
 There are a lot of experimental code in this project, but the contact for the submission is inside
