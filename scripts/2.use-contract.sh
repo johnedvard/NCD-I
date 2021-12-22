@@ -9,7 +9,11 @@ echo "Step 0: Check for environment variable with contract name"
 echo ---------------------------------------------------------
 echo
 
+# export CONTRACT=dev-somethingsomething
+# export ACCOUNT_ID=dev-somethingsomething or your own testnet ID
+# For example
 export CONTRACT=dev-1640008486408-51574320535043
+export ACCOUNT_ID=johnonym.testnet
 
 [ -z "$CONTRACT" ] && echo "Missing \$CONTRACT environment variable" && exit 1
 [ -z "$CONTRACT" ] || echo "Found it! \$CONTRACT is set to [ $CONTRACT ]"
@@ -23,20 +27,22 @@ echo "(run this script again to see changes made by this file)"
 echo ---------------------------------------------------------
 echo
 
-near view $CONTRACT helloWorld
+echo "Get the current game's regisdtered words"
 near view $CONTRACT getWords
+
+echo "Get a game's state"
+near view $CONTRACT getAGame '{"word": "スル"}'
 
 echo
 echo
 echo ---------------------------------------------------------
 echo "Step 2: Call 'change' functions on the contract"
+echo "Remember to change the word from キング to something else (because a game with key キング already exists)"
 echo ---------------------------------------------------------
 echo
 
-# the following line fails with an error because we can't write to storage without signing the message
-# --> FunctionCallError(HostError(ProhibitedInView { method_name: "storage_write" }))
-# near view $CONTRACT write '{"key": "some-key", "value":"some value"}'
-near call $CONTRACT addWord '{"word": "キング"}' --accountId $CONTRACT
+## See the addWord fumctiom to understand what the error codes mean
+near call $CONTRACT addWord '{"word": "キング"}' --accountId $ACCOUNT_ID
 
 echo
 echo "now run this script again to see changes made by this file"
