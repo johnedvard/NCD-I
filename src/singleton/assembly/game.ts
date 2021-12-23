@@ -7,6 +7,8 @@ import { PersistentVector, storage } from 'near-sdk-as';
  */
 @nearBindgen
 export class ShiriToriGame {
+  // the words don't need to be a persitentVector in this game. It could be a string[] array.
+  // Wehn we use the PersistentVector like this, it acts similar to a static variable, the data is shared across different instances of the Game
   private words: PersistentVector<string> = new PersistentVector<string>('w'); // The "w" is a prefix used in the contract
   private lastSignedBy: string = '';
 
