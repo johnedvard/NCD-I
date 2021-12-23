@@ -18,10 +18,6 @@ export class Contract {
     return this.game.getWords();
   }
 
-  getGame(): ShiriToriGame {
-    return this.game;
-  }
-
   getAGame(word: string): ShiriToriGame | null {
     if (storage.hasKey(word)) {
       return storage.getSome<ShiriToriGame>(word);
