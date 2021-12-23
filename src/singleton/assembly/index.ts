@@ -3,8 +3,6 @@ import { ShiriToriGame } from './game';
 
 @nearBindgen
 export class Contract {
-  private notMutatable: string = 'foo';
-  private mutatable: string = 'bar';
   private game: ShiriToriGame = new ShiriToriGame();
 
   @mutateState()

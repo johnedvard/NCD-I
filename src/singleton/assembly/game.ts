@@ -39,7 +39,7 @@ export class ShiriToriGame {
       this.doesStartWithCorrectCharacter(word)
     ) {
       // changing the class(singleton)'s state requires @mutateState().
-      // this variable could have been stored using storage instead.
+      // this variable could have been stored using storage instead (e.g. storage.set<string>('lastSignedBy', sender))
       this.lastSignedBy = sender;
       this.words.push(word);
       // update the gamestate in storage

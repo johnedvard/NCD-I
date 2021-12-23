@@ -31,9 +31,11 @@ run `npm run test` to run the tests for the game found in "src/singleton/**tests
 
 ## Additional comments
 
-There are a lot of experimental code in this project, but the contact for the submission is inside
+There are a lot of experimental code in this project, but the contact for the submission is inside.
 
 - `src/singleton/assembly/index.ts`
 - `src/singleton/assembly/game.ts`
 - I have also created some tests in `src/singleton/__tests__/index.unit.spec.ts`
   Ignore the rest of the files, as they are only for experimenting.
+
+If you're not able to run the shell scripts inside ./scripts, check the README, `scripts/README.md` for some help.
