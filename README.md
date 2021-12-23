@@ -39,3 +39,7 @@ There are a lot of experimental code in this project, but the contact for the su
   Ignore the rest of the files, as they are only for experimenting.
 
 If you're not able to run the shell scripts inside ./scripts, check the README, `scripts/README.md` for some help.
+
+## Demo Video on Loom
+
+https://www.loom.com/share/81a53b6abe7644f8b74e4d92a569ab63
