@@ -1,6 +1,4 @@
-import { PersistentVector, storage, logging } from 'near-sdk-as';
-
-import { Player } from './player';
+import { PersistentVector, storage } from 'near-sdk-as';
 /**
  * A Japanese game where you have to write a word that starts with the previous's words last character.
  * It's intended to be played using Japanese characters, and only katakana (カタカナ)
@@ -10,7 +8,6 @@ import { Player } from './player';
 @nearBindgen
 export class ShiriToriGame {
   private words: PersistentVector<string> = new PersistentVector<string>('w'); // The "w" is a prefix used in the contract
-  private players: PersistentVector<Player> = new PersistentVector<Player>('p'); // just for testing
   private lastSignedBy: string = '';
 
   constructor() {}
@@ -101,42 +98,5 @@ export class ShiriToriGame {
       stringWords.push(this.words[i]);
     }
     return stringWords;
-  }
-
-  // ===== Everything below is just testing web assembly and smart contract in general =====
-
-  addPlayer(): Player {
-    this.players.push(new Player());
-    return this.players[0];
-  }
-
-  changePlayer(index: i32, value: boolean): Player {
-    const player = this.players[index];
-    player.setAi(value);
-    this.players[index] = player;
-    // this.players[index].setAi(value); // This does not overwrite the state. Need to set the new player explicitly.
-    return this.players[index];
-  }
-
-  getPlayers(): Player[] {
-    const players: Player[] = [];
-    for (let i = 0; i < this.players.length; i++) {
-      players.push(this.players[i]);
-    }
-    return players;
-  }
-
-  addStatToPlayer(index: i32, stat: string): Player {
-    const player = this.players[index];
-    player.addStat(stat);
-    this.players[index] = player;
-    return this.players[index];
-  }
-
-  addAbility(index: i32, ability: string): Player {
-    const player = this.players[index];
-    player.addAbility(ability);
-    this.players[index] = player;
-    return this.players[index];
   }
 }

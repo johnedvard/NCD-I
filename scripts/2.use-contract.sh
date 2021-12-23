@@ -18,19 +18,14 @@ export ACCOUNT_ID=johnonym.testnet
 [ -z "$CONTRACT" ] && echo "Missing \$CONTRACT environment variable" && exit 1
 [ -z "$CONTRACT" ] || echo "Found it! \$CONTRACT is set to [ $CONTRACT ]"
 
-echo
-echo
 echo ---------------------------------------------------------
-echo "Step 1: Call 'view' functions on the contract"
-echo
-echo "(run this script again to see changes made by this file)"
-echo ---------------------------------------------------------
-echo
-
 echo "Get the current game's regisdtered words"
+echo ---------------------------------------------------------
 near view $CONTRACT getWords
 
-echo "Get a game's state"
+echo ---------------------------------------------------------
+echo "Get a game's state using a word"
+echo ---------------------------------------------------------
 near view $CONTRACT getAGame '{"word": "キング"}'
 
 echo
